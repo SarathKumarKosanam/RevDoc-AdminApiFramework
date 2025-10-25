@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-25T22:06:15 IST" name="Admin API Regression Suite" finished-at="2025-10-25T22:06:23 IST" duration-ms="8475">
+    <groups>
+    </groups>
+    <test started-at="2025-10-25T22:06:15 IST" name="Admin Functional Tests - All Classes in Package" finished-at="2025-10-25T22:06:23 IST" duration-ms="8475">
+      <class name="com.rev.admin.tests.AdminLoginTest">
+        <test-method is-config="true" signature="initReport()[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad]" started-at="2025-10-25T22:06:14 IST" name="initReport" finished-at="2025-10-25T22:06:15 IST" duration-ms="299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initReport -->
+        <test-method is-config="true" signature="setUpFrontTokeAndCookie()[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad]" started-at="2025-10-25T22:06:15 IST" name="setUpFrontTokeAndCookie" finished-at="2025-10-25T22:06:18 IST" duration-ms="3292" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpFrontTokeAndCookie -->
+        <test-method is-config="true" signature="startExtentTest(java.lang.reflect.Method)[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad]" started-at="2025-10-25T22:06:18 IST" name="startExtentTest" finished-at="2025-10-25T22:06:18 IST" duration-ms="8" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rev.admin.tests.AdminLoginTest.adminLoginWithOtpTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startExtentTest -->
+        <test-method signature="adminLoginWithOtpTest()[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad]" started-at="2025-10-25T22:06:18 IST" name="adminLoginWithOtpTest" finished-at="2025-10-25T22:06:21 IST" duration-ms="3081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminLoginWithOtpTest -->
+        <test-method is-config="true" signature="endExtentTest(org.testng.ITestResult)[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad]" started-at="2025-10-25T22:06:21 IST" name="endExtentTest" finished-at="2025-10-25T22:06:21 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=adminLoginWithOtpTest status=SUCCESS method=AdminLoginTest.adminLoginWithOtpTest()[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endExtentTest -->
+        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:com.rev.admin.tests.AdminLoginTest@752325ad]" started-at="2025-10-25T22:06:23 IST" name="tearDownReport" finished-at="2025-10-25T22:06:23 IST" duration-ms="313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownReport -->
+      </class> <!-- com.rev.admin.tests.AdminLoginTest -->
+      <class name="com.rev.admin.tests.ProcedrueLoading">
+        <test-method is-config="true" signature="setUpFrontTokeAndCookie()[pri:0, instance:com.rev.admin.tests.ProcedrueLoading@1ff4931d]" started-at="2025-10-25T22:06:21 IST" name="setUpFrontTokeAndCookie" finished-at="2025-10-25T22:06:22 IST" duration-ms="1143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpFrontTokeAndCookie -->
+        <test-method is-config="true" signature="startExtentTest(java.lang.reflect.Method)[pri:0, instance:com.rev.admin.tests.ProcedrueLoading@1ff4931d]" started-at="2025-10-25T22:06:22 IST" name="startExtentTest" finished-at="2025-10-25T22:06:22 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rev.admin.tests.ProcedrueLoading.procedureLoadingStatusCodeAndResposeVerification()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startExtentTest -->
+        <test-method signature="procedureLoadingStatusCodeAndResposeVerification()[pri:0, instance:com.rev.admin.tests.ProcedrueLoading@1ff4931d]" started-at="2025-10-25T22:06:22 IST" name="procedureLoadingStatusCodeAndResposeVerification" finished-at="2025-10-25T22:06:23 IST" duration-ms="908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- procedureLoadingStatusCodeAndResposeVerification -->
+        <test-method is-config="true" signature="endExtentTest(org.testng.ITestResult)[pri:0, instance:com.rev.admin.tests.ProcedrueLoading@1ff4931d]" started-at="2025-10-25T22:06:23 IST" name="endExtentTest" finished-at="2025-10-25T22:06:23 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=procedureLoadingStatusCodeAndResposeVerification status=SUCCESS method=ProcedrueLoading.procedureLoadingStatusCodeAndResposeVerification()[pri:0, instance:com.rev.admin.tests.ProcedrueLoading@1ff4931d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endExtentTest -->
+      </class> <!-- com.rev.admin.tests.ProcedrueLoading -->
+    </test> <!-- Admin Functional Tests - All Classes in Package -->
+  </suite> <!-- Admin API Regression Suite -->
+</testng-results>
