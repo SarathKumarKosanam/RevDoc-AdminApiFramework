@@ -46,7 +46,7 @@ public void procedureUpdatePatch() {
 
             Assert.assertEquals(ProcedureUpdateResponse.getStatusCode(), 200, "Procedure patch failed (Status Code).");
 
-            test.pass("ProcedureUpdatePatch Passed. Status Code: 200.");
+            test.pass("ProcedureUpdatePatch Passed and data updated successfully. Status Code: 200.");
 
         } catch (AssertionError e) {
 
