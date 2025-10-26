@@ -1,5 +1,4 @@
 package com.rev.admin.utils;
-
 import com.rev.admin.endpoints.AdminEndpoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

@@ -3,14 +3,26 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rev.admin.tests.AdminLoginTest">
+      <class name="com.rev.admin.tests.VerifyProcedureUpdatePut">
         <methods>
+          <include name="startExtentTest"/>
           <include name="setUpFrontTokeAndCookie"/>
           <include name="initReport"/>
-          <include name="adminLoginWithOtpTest"/>
+          <include name="procedureUpdatePut"/>
           <include name="tearDownReport"/>
+          <include name="endExtentTest"/>
         </methods>
-      </class> <!-- com.rev.admin.tests.AdminLoginTest -->
+      </class> <!-- com.rev.admin.tests.VerifyProcedureUpdatePut -->
+      <class name="com.rev.admin.tests.VerifyProcedureUpdatePatch">
+        <methods>
+          <include name="startExtentTest"/>
+          <include name="setUpFrontTokeAndCookie"/>
+          <include name="initReport"/>
+          <include name="procedurePartialUpdatePatch"/>
+          <include name="tearDownReport"/>
+          <include name="endExtentTest"/>
+        </methods>
+      </class> <!-- com.rev.admin.tests.VerifyProcedureUpdatePatch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

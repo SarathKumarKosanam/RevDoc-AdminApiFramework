@@ -1,1 +1,4 @@
-/target/
+# Ignore generated test output and IDE files
+test-output/
+.classpath
+.project

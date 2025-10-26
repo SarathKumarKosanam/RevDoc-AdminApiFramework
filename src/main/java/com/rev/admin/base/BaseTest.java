@@ -3,27 +3,32 @@ package com.rev.admin.base;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.ITestResult;
 import java.lang.reflect.Method;
 
-import com.rev.admin.utils.AuthHeaderProvider;
+
+
 import com.rev.admin.utils.ConfigReader;
 import com.rev.admin.utils.TokenManager;
 import com.rev.admin.reports.ExtentManager;
+
 import com.rev.admin.reports.ExtentTestManager;
+
 
 import io.restassured.RestAssured;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
 import com.aventstack.extentreports.Status;
 import org.testng.annotations.Test; // Added Test annotation import
 
 public class BaseTest {
 	
 	public String FrontToken;
-	public String Cookie;
+	public static String Cookie;
 
 protected static ExtentReports extent;
 // Removed: protected static ExtentTest test; // ExtentTest is now managed by ExtentTestManager
@@ -47,7 +52,7 @@ System.out.println("✅ Extent Report initialized successfully");
     }
 
 // 🔹 RestAssured setup (runs before every test class)
-@BeforeClass
+ @BeforeSuite
 public void setUpFrontTokeAndCookie() {
 // 1. Set Base URI once
 //  RestAssured.baseURI = ConfigReader.get("baseUrl");
@@ -57,7 +62,9 @@ public void setUpFrontTokeAndCookie() {
 String[] Tokens = TokenManager.loginWithEmailAndPassword();
 
 this.FrontToken = Tokens[0];
-this.Cookie = "sAccessToken="+Tokens[1];
+Cookie = "sAccessToken="+Tokens[1];
+
+
 }
 
     // 🔹 Extent Test finalizer (runs after every test method)
@@ -74,6 +81,8 @@ this.Cookie = "sAccessToken="+Tokens[1];
         }
         // Flushing is handled in @AfterSuite
     }
+    
+    
 
 // 🔹 Flush report after suite execution
 @AfterSuite
@@ -81,5 +90,4 @@ public void tearDownReport() {
 if (extent != null) {
 extent.flush();
 System.out.println("📊 Extent Report generated successfully");}
-}
-}
+}}

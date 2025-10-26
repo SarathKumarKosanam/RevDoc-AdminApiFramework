@@ -1,5 +1,6 @@
 package com.rev.admin.tests;
 
+
 import com.rev.admin.base.BaseTest;
 import com.rev.admin.endpoints.AdminEndpoints;
 import com.rev.admin.utils.ApiUtils;
@@ -8,6 +9,7 @@ import com.aventstack.extentreports.ExtentTest; // New Import
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import static org.hamcrest.Matchers.*;
 // import org.testng.Reporter; // Removed this import
 import com.rev.admin.utils.ConfigReader;
 
@@ -121,6 +123,24 @@ public class AdminLoginTest extends BaseTest {
             throw e;
         }
 
+        
+        try {
+            // SINGLE LINE JSON BODY VERIFICATION using Rest Assured's body() and Hamcrest Matchers
+            otpResponse.then()
+                .statusCode(200) // Verifies the status code
+                .body("created_new_user", equalTo(false)) // Checks boolean value
+                .body("user.user_id", is(notNullValue())) // Checks dynamic value is present
+                .body("user.email", is(nullValue())) // Checks email is null
+                .body("user.phone_number", equalTo("9923970719")) // Checks static phone number
+                .body("user.time_joined", is(notNullValue())) // Checks dynamic time_joined is present
+                .body("user.tenant_ids", hasItem("public")); // Checks array contains "public"
+
+            test.pass("Step 3 Passed. Status Code (200) and **full JSON body contract verified** in one fluent assertion.");
+        } catch (AssertionError e) {
+            test.fail("Step 3 Failed. Full contract verification failed. Error: " + e.getMessage());
+            throw e;
+        }
+        
         // Log final artifact (cookie)
         test.info("Final Cookie: " + otpResponse.getHeader("cookie"));
 

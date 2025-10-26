@@ -1,21 +1,16 @@
 package com.rev.admin.utils;
 
-import com.rev.admin.endpoints.AdminEndpoints;
 
+import com.rev.admin.base.BaseTest;
+import com.rev.admin.endpoints.AdminEndpoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-public class ApiUtils {
+public class ApiUtils extends BaseTest {
 
-    // 💡 CRITICAL FIX: Missing method added to support ProcedrueLoading.java
-    public static Response sendGetUsingBaseSpec(String endpoint) {
-        return RestAssured.given()
-                .when()
-                .get(endpoint)
-                .then()
-                .extract().response();
-    }
+
+
     
     // Sends the request using the token explicitly as an 'sAccessToken' cookie
     public static Response SendGetWithAccessTokenCookie(String endpoint, String sAccessTokenValue) {
@@ -31,17 +26,34 @@ public class ApiUtils {
                 .extract().response();
     }
 
-    
-    // Remaining methods (sendPostWithFrontToken, sendGetWithToken, SendGetWithBearer, etc.)
-    // ... (These methods are assumed to be correct from previous exchanges) ...
-    // Since you only need the fix, I will only include the critical methods here.
-    
+  
     public static Response sendPost(String endpoint, String body) {
         return RestAssured.given()
                 .contentType(ContentType.JSON)
+                .header("cookie", Cookie) 
                 .body(body)
                 .post(ConfigReader.get("baseUrl")+endpoint)
                 .then()
                 .extract().response();
     }
+    public static Response sendPatch(String endpoint, String body) {
+        return RestAssured.given()
+                .contentType(ContentType.JSON)
+                .header("cookie",Cookie) 
+                .body(body)
+                .patch(ConfigReader.get("baseUrl")+endpoint)
+                .then()
+                .extract().response();
+    }
+    public static Response sendPut(String endpoint, String body) {
+        return RestAssured.given()
+                .contentType(ContentType.JSON)
+                .header("cookie",Cookie) 
+                .body(body)
+                .put(ConfigReader.get("baseUrl")+endpoint)
+                .then()
+                .extract().response();
+    }
+    
+    
 }

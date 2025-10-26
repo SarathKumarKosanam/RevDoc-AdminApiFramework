@@ -33,7 +33,6 @@ public class AdminActions {
                 .statusCode(200) // Expect 200 on success
                 .extract().response();
     }
-
     // Step 3: Verify OTP
     public static Response verifyOtp(String sessionToken, String preAuthSessionId, String codeId, String deviceId, String phone, String otp) {
         
@@ -67,5 +66,4 @@ public class AdminActions {
                 .log().all()
                  // Expect 200 on final success
                 .extract().response();
-    }
-}
+}}
